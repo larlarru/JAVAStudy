@@ -98,9 +98,9 @@ public class Baseball {
 			//세번째 숫자 answerNum3 스트라이크, 볼, 아웃 판단 부분
 			if (answerNum3 == inputNum3) { //스트라이크 판정
 				strike++;
-			} else if (answerNum3 == inputNum1) { //볼 판정
+			} else if (answerNum3 == inputNum1) { //아웃 판정
 				ball++;
-			} else if (answerNum3 == inputNum2) { //볼 판정
+			} else if (answerNum3 == inputNum2) { //아웃 판정
 				ball++;
 			} else if (answerNum3 != inputNum1) { //아웃 판정
 				out++;
