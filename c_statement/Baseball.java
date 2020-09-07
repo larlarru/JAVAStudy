@@ -16,18 +16,18 @@ public class Baseball {
 		// 1~9까지 3개 만드는데 중복되지 않게 하기
 		// 숫자 맞추기 게임
 
-		int answerNum1 = (int) (Math.random() * 8) + 1;
-		int answerNum2 = (int) (Math.random() * 8) + 1;
-		int answerNum3 = (int) (Math.random() * 8) + 1;
+		int answerNum1 = (int) (Math.random() * 9) + 1;
+		int answerNum2 = (int) (Math.random() * 9) + 1;
+		int answerNum3 = (int) (Math.random() * 9) + 1;
 
 		// 랜덤 중복 부여(숫자 중복 안되게 부여)
 		do {
 			if (answerNum1 == answerNum2) {
-				answerNum2 = (int) (Math.random() * 8) + 1;
+				answerNum2 = (int) (Math.random() * 9) + 1;
 			} else if (answerNum1 == answerNum3) {
-				answerNum3 = (int) (Math.random() * 8) + 1;
+				answerNum3 = (int) (Math.random() * 9) + 1;
 			} else if (answerNum2 == answerNum3) {
-				answerNum3 = (int) (Math.random() * 8) + 1;
+				answerNum3 = (int) (Math.random() * 9) + 1;
 			}
 
 		} while (answerNum1 == answerNum2 || answerNum2 == answerNum3
