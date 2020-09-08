@@ -1,8 +1,8 @@
-package d_array;
+package teststudy;
 
 import java.util.Arrays;
 
-public class Sort {
+public class TestCode2 {
 
 	public static void main(String[] args) {
 		/*
@@ -24,7 +24,7 @@ public class Sort {
 		System.out.println("지정한  값 : " + Arrays.toString(arr));
 
 		// 석차구하기
-		// printRank(arr); //석차구하기, 석차를 구하는 코드를 묶어놓는 메소드
+		printRank(arr); //석차구하기, 석차를 구하는 코드를 묶어놓는 메소드
 		// printRank(arr);에 있는 배열 arr는 밑에 있는 메소드에 있는 int[] arr로 넘긴거다.
 		/*
 		 * printRank(arr);로 인해 만들어진 printRank()메소드를 만들고 그거 작업한 후에 다시 main 메소드에
@@ -32,9 +32,9 @@ public class Sort {
 		 */
 
 		// 메소드 만들때 Ctrl+1누르면 된다.
-		// selectSort(arr); //선택 정렬
-		// bubbleSort(arr); //버블 정렬
-		insertSort(arr); // 삽입 정렬
+		//selectSort(arr); //선택 정렬
+		//bubbleSort(arr); //버블 정렬
+		//insertSort(arr); // 삽입 정렬
 
 	}
 
@@ -48,7 +48,7 @@ public class Sort {
 		/*
 		 * 참고 이거는 감소하는 문장 그래서 0이 될떄까지 감소 i, j 1,0 2,1 2,0
 		 */
-		System.out.println("바꾸기 전 : " + Arrays.toString(arr));
+		System.out.println("삽입 정렬 바꾸기 전 : " + Arrays.toString(arr));
 
 		for (int i = 1; i < arr.length; i++) {
 			int temp = arr[i]; // 임시로 값 보관
@@ -60,33 +60,12 @@ public class Sort {
 					break;
 				}
 			}
-			System.out.println(i + "번째 바꾸는중 : " + Arrays.toString(arr));
+			System.out.println(i + " 번째 삽입 정렬 출력중 : " + Arrays.toString(arr));
 			arr[j + 1] = temp; // 이공간이 큰 숫자로 뒤로 밀어버리고 비어버리는 자리이다.
-		}		
-/*		 for (int i = 0; i < arr.length-1; i++) { 
-		 // 여기 부분 즉 버블정렬에서 for문에 있는 i의 의미는 한바퀴가 아니라 세로로 9번째 까지 출력을 하겠다는건데 만약에 9번째 도중에 완료되면 종료되게 한거다. 반복을
-		 //arr.length -1 해주는 이유는 마지막에 비교할 대상이 없기 때문이다. 
-		 //그래서 arr.length -1 값은 9가 된다 arr.length=10이라서 boolean changed = false; 
-		 //중간에 바꾸는게 없으면 그만두기 위해 변수 선언 
-		 System.out.println(i+1 + " 번째 출력"); 
-		 for (int j = 1; j <arr.length-(arr.length-j); j++) { //j = i+1로 지정한 이유는 정렬된 i번째 다음부터 실행되야되서
-		  //arr.length-1-is는 반복 횟수 줄이려고 
-		  if(arr[j] > arr[j + 1]){ 
-			  int temp = arr[j]; 
-			  arr[j] = arr[j + 1]; 
-			  arr[j + 1] = temp; 
-			  changed = true; 
-			  } 
-		  } if(!changed) { //changed를 맨 처음에 false로 선언했는데 arr[j + 1] = temp; changed = true;일 경우 true니 true값이 오게 되어 이 반복문을 멈추게 한다.
-		 //!changed는 바뀌지 않았다. changed == true는 changed가 true값이라는 의미 즉 표현의  차이이다. 
-			  break; 
-			  }
-		 
-		 
-		 System.out.println("돌아가는지 판단하기 : " + Arrays.toString(arr)); }
-		*/ 
+		}
+
 		Arrays.sort(arr); // 정렬
-		System.out.println("결과 : " + Arrays.toString(arr));
+		System.out.println("삽입 정렬 결과 : " + Arrays.toString(arr));
 	}
 
 	// 버블정렬
@@ -108,17 +87,15 @@ public class Sort {
 		 * 그래서 i가 증가 할수록 도는 횟수를 줄여줌 i는(i값은) for문 도는 횟수 그래서 총 9번 돈다.
 		 */
 		// 선생님이 한거 답 :
-
 		for (int i = 0; i < arr.length - 1; i++) {
 			// 여기 부분 즉 버블정렬에서 for문에 있는 i의 의미는 한바퀴가 아니라 세로로 9번째 까지 출력을 하겠다는건데 만약에
 			// 9번째 도중에 완료되면 종료되게 한거다. 반복을
-			// arr.length -1 해주는 이유는 마지막에 비교할 대상이 없기 때문이다. 
-			//그래서 arr.length -1 값은 9가 된다 arr.length=10이라서
+			// arr.length -1 해주는 이유는 마지막에 비교할 대상이 없기 때문이다. 그래서 arr.length -1 값은 9가 된다 arr.length=10이라서
 			boolean changed = false; // 중간에 바꾸는게 없으면 그만두기 위해 변수 선언
-			System.out.println(i + 1 + " 번째 출력");
-			for (int j = 0; j < arr.length - 1 - i; j++) { 
+			System.out.println(i + 1 + " 번째 버블 정렬 출력");
+			for (int j = 0; j < arr.length - 1 - i; j++) {
 				// j = i+1로 지정한 이유는 정렬된 i번째 다음부터 실행되야되서
-				//arr.length-1-is는 반복 횟수 줄이려고
+				// arr.length-1-is는 반복 횟수 줄이려고
 				if (arr[j] > arr[j + 1]) {
 					int temp = arr[j];
 					arr[j] = arr[j + 1];
@@ -131,43 +108,20 @@ public class Sort {
 				// !changed는 바뀌지 않았다. changed == true는 changed가 true값이라는 의미 즉 표현의 차이이다.
 				break;
 			}
-
-			System.out.println("돌아가는지 판단하기 : " + Arrays.toString(arr));
+			System.out.println(i + 1 + " 번째 버블 정렬 돌리는중 : " + Arrays.toString(arr));
 		}
-
-		/*
-		 * //비교하면서 큰 수를 구하고 그리고 자리를 바꾸게 하여 정렬하게 하는 부분 
-		 * //중간에 정렬이 완성되면 그만두게 하는걸 실패함 
-		 * for (int i = 0; i < arr.length-1; i++) { //arr.length -1 해주는 이유는 마지막에 비교할 대상이 없기 때문이다. 
-		 * //그래서 arr.length -1 값은 9가 된다 arr.length=10이라서
-		 * int max = i; 
-		 * for (int j = i+1; j < arr.length; j++) { //j = i+1로 지정한 이유는 정렬된 i번째 다음부터 실행되야되서 
-		 * if(arr[j] < arr[max]){ 
-		 * max = j; 
-		 * } 
-		 * } //자리 바꾸기
-		 * //계속 큰수를 구하게 되면 그 자리에 맞게 바꿔야하기 때문에 for문 돌릴수록 큰수가 내가 의도한 위치로 가게 된다.
-		 * int temp = arr[i]; 
-		 * arr[i] = arr[max]; 
-		 * arr[max] = temp;
-		 * System.out.println("돌아가는지 판단하기 : " + Arrays.toString(arr));
-		 * 
-		 * }
-		 */
-		
-		System.out.println("결과 : " + Arrays.toString(arr));
-
+		System.out.println("버블 정렬 결과 : " + Arrays.toString(arr));
 	}
 
 	// 선택 정렬
 	private static void selectSort(int[] arr) {
 		// 선생님이 해주신 답
 		// 작은 숫자 구하기
-		for (int i = 0; i < arr.length - 1; i++) { 
-			// arr.length -1 해주는 이유는 마지막에 비교할 대상이 없기 때문이다. 
-			//그래서 arr.length -1 값은 9가 된다 arr.length=10이라서
+		for (int i = 0; i < arr.length - 1; i++) {
+			// arr.length -1 해주는 이유는 마지막에 비교할 대상이 없기 때문이다.
+			// 그래서 arr.length -1 값은 9가 된다 arr.length=10이라서
 			int min = i;
-			for (int j = i + 1; j < arr.length; j++) { 
+			for (int j = i + 1; j < arr.length; j++) {
 				// j = i+1로 지정한 이유는 정렬된 i번째 다음부터 실행되야되서
 				if (arr[j] < arr[min]) {
 					min = j;
@@ -177,33 +131,13 @@ public class Sort {
 			int temp = arr[i];
 			arr[i] = arr[min];
 			arr[min] = temp;
+			System.out.println(i + 1 + " 번째 선택 정렬 돌리는중 : " + Arrays.toString(arr));
 		}
-		System.out.println(Arrays.toString(arr));
-
-		
-	/*	int smallNum = 0;
-		int[] minStart = new int[10];
-		for (int i = 0; i < minStart.length; i++) {
-			minStart[i] = arr[i];
-		}
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-				if (arr[j] < arr[i]) {
-					if (arr[j] < arr[i]) {
-						smallNum = arr[j]; //
-					}
-				}
-
-			}
-
-		}
-*/
-		System.out.println(Arrays.toString(arr));
+		System.out.println("선택 정렬 결과 : " + Arrays.toString(arr));
 	}
 
 	// 메소드 하나 만듬 석차 구하기 위한 메소드
 	private static void printRank(int[] arr) {
-
 		// 내가 작성했떤것은 for문 하나만 작성해서 한바퀴만 돌고 끝난거였음
 		// 선생님이 하신 답 :
 		// 석차를 저장할 배열의 모든 인덱스를 1로 초기화한다.
@@ -219,8 +153,9 @@ public class Sort {
 					rank[i]++;
 				}
 			}
+			System.out.println( i + 1 + " 번째 석차구하는중  : "+ Arrays.toString(rank));
 		}
-		System.out.println(Arrays.toString(rank));
+		System.out.println("석차구하기 결과 값 : " + Arrays.toString(rank));
 	}
 
 }
