@@ -42,7 +42,15 @@ public class TestCode4_Score {
 		}
 
 		for (int i = 0; i < score.length; i++) {
+			//nameAvg[i] = Math.round((float) nameSum[i] / subjects.length * 100) / 100f;
 			nameAvg[i] = Math.round((float) nameSum[i] / subjects.length * 100) / 100f;
+			
+			
+			System.out.println("나누기 전 : " + i + " 번째 " + (float) nameSum[i] / subjects.length);
+			System.out.println("Math.round 후 : " + i + " 번째 " + (float) nameSum[i] / subjects.length * 100);
+			System.out.println("Math 마지막 전 : " + i + " 번째 " + ((float) nameSum[i] / subjects.length * 100) / 100f);
+			System.out.println("Math만 적용: " + i + " 번째 " + Math.round((float) nameSum[i] / subjects.length * 100));
+			System.out.println("Math 마지막 후 : " + i + " 번째 " + Math.round((float) nameSum[i] / subjects.length * 100) / 100f);
 		}
 
 		for (int i = 0; i < subjects.length; i++) {
