@@ -7,8 +7,9 @@ public class Quiz {
 	public static void main(String[] args) {
 		//quiz1(); //퀴즈1번 메소드, 거스름돈의 동전 개수
 		//quiz2(); //그래프 그리기
-		quiz3(); //같은 숫자는 싫어
-		//만약 복습할게 없어서 할게 없을 경우 quiz4(); //나누어 떨어지는 숫자 배열
+		//quiz3(); //같은 숫자는 싫어
+		//만약 복습할게 없어서 할게 없을 경우 quiz4하기 
+		quiz4(); //나누어 떨어지는 숫자 배열
 
 		
 	}
@@ -27,6 +28,101 @@ public class Quiz {
 		 * 그다음에 구해진 배열 값을 정렬 시켜서 출력
 		*/
 		
+		//선생님이 하신 quiz4답
+		int[] temp = new int[100];
+		int n = (int)(Math.random() * 4) + 2;
+		int count = 0;
+		for(int i =0; i < arr.length; i++) {
+			if (arr[i] % n == 0) {
+				temp[count++] = arr[i];
+			}
+		}
+		
+		arr = new int[count]; //기존에 있떤 배열은 사라지고 새로운 배열이 선언된다.
+		//나누어 떨어지는 숫자 크기?만큼 배열이 크기를 가지게 됨
+	
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = temp[i];
+		}
+		//정렬
+		for(int i = 0; i < arr.length - 1; i++) {
+			int min = i;
+			for(int j = i + 1; j < arr.length; j++) {
+				if(arr[j] < arr[min]) {
+					min = j;
+				}
+			}
+			int tmp = arr[i];
+			arr[i] = arr[min];
+			arr[min] = tmp;
+		}
+		System.out.println("n : " + n);
+		System.out.println(Arrays.toString(arr));
+		
+		
+		//arr[i]를 나눌 2 ~ 5 사이의 랜덤 수 배정 부분 
+/*		int div = div = (int)(Math.random() * 5) + 1;
+		if (div >= 0 && div < 3) {
+			div = 2;
+		}
+		
+		//랜덤수 배열 받은거 arr[i] 나눠서 res[i]배열에 채우기
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] % div == 0) {
+				temp[i] = (arr[i] / div) * div;
+			}
+		}
+*/		
+		
+		//랜덤수 배열 받은거 arr[i] 나누고  res[i]배열에 채우기
+/*		//중복 숫자 제거할려고 넣었으나 오류가 남
+		int[] temp = new int[100]; // 나누어 떨어지는 숫자 배열 선언
+		int count = 0;
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				boolean flag = false;
+				if (arr[j] % div == 0) {
+					temp[i] = arr[j];
+				}
+				if (temp[i] == arr[j]) {
+					flag = true;
+				}
+				if(!flag) { //중복되지 않는 경우
+					temp[count++] = arr[j]; //임시로만든 배열 temp에다가 arr[i]값을 넣음
+					//위에 temp에 i와 j를 사용할 수 없으니 또다른 변수를 만들어줘야함
+					//그래서 중복되지 않는 값이 증가할때마다 count가 1씩 증가함
+				}
+			}
+		}
+*/		
+/*		for (int i = 0; i < arr.length; i++) {
+			boolean flag = false;
+			if (arr[i] % div == 0) {
+				temp[i] = (arr[i] / div) * div;
+			}
+			if (temp[i] == 0) {
+				flag = true;
+			}
+			if(!flag) { //중복되지 않는 경우
+				temp[count++] = (arr[i] / div) * div; //임시로만든 배열 temp에다가 arr[i]값을 넣음
+				//위에 temp에 i와 j를 사용할 수 없으니 또다른 변수를 만들어줘야함
+				//그래서 중복되지 않는 값이 증가할때마다 count가 1씩 증가함
+			}
+		}
+		
+		int[] result = new int[count];
+		for(int i = 0; i < result.length; i++){
+			result[i] = temp[i];
+		}		
+		
+		System.out.println("나누지건 랜덤 배열 숫자 : " + Arrays.toString(arr));
+		System.out.println("나눌 숫자 : " + div);
+		System.out.println("나누어 떨어지는 숫자 결과 : " + Arrays.toString(temp));
+		System.out.println("count 숫자 값 : " + count);
+		System.out.println("0제외 나누어 떨어지는 숫자 결과 : " + Arrays.toString(result));
+		Arrays.sort(result); //정렬
+		System.out.println("0제외 나누어 떨어지는 숫자 결과 정리 : " + Arrays.toString(result));
+		*/
 	}
 
 	//같은 숫자는 싫어

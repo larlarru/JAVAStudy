@@ -24,7 +24,7 @@ public class Sort {
 		System.out.println("지정한  값 : " + Arrays.toString(arr));
 
 		// 석차구하기
-		// printRank(arr); //석차구하기, 석차를 구하는 코드를 묶어놓는 메소드
+		 printRank(arr); //석차구하기, 석차를 구하는 코드를 묶어놓는 메소드
 		// printRank(arr);에 있는 배열 arr는 밑에 있는 메소드에 있는 int[] arr로 넘긴거다.
 		/*
 		 * printRank(arr);로 인해 만들어진 printRank()메소드를 만들고 그거 작업한 후에 다시 main 메소드에
@@ -34,7 +34,7 @@ public class Sort {
 		// 메소드 만들때 Ctrl+1누르면 된다.
 		// selectSort(arr); //선택 정렬
 		// bubbleSort(arr); //버블 정렬
-		insertSort(arr); // 삽입 정렬
+		//insertSort(arr); // 삽입 정렬
 
 	}
 
@@ -203,6 +203,8 @@ public class Sort {
 
 	// 메소드 하나 만듬 석차 구하기 위한 메소드
 	private static void printRank(int[] arr) {
+		
+		System.out.println("arr.length : " + arr.length);
 
 		// 내가 작성했떤것은 for문 하나만 작성해서 한바퀴만 돌고 끝난거였음
 		// 선생님이 하신 답 :
