@@ -9,12 +9,39 @@ public class RandomCofeChoice {
 		
 		//순서
 		int[] num = new int[4];
-		
+
 		for (int i = 0; i < num.length; i++) {
 			num[i] = (int) (Math.random() * 4);
 		}
+
+		do {
+			for (int i = 0; i < num.length; i++) {
+				num[i] = (int) (Math.random() * 4);
+			}
+
+		} while (num[0] == num[1] || num[1] == num[2] || num[2] == num[3]
+				|| num[3] == num[0]);
 		
-		for (int i = 0; i < 4; i++) {
+		
+/*		for (int i = 0; i < num.length; i++) {
+			for (int j = 0; i < num.length; i++) {
+				num[i] = (int) (Math.random() * 4);
+				if (i == 1 && num[i] == num[j]) {
+					do {
+						num[i] = (int) (Math.random() * 4);
+						if(num[i] != num[j]) {
+							break;
+						}
+					} while (num[i] == num[j]);
+				}
+			}
+		}
+		*/
+		
+		
+		
+		
+/*		for (int i = 0; i < 4; i++) {
 			
 			for (int j = i+1; j < 4; j++) {
 				if (num[i] == num[j]) {
@@ -22,9 +49,67 @@ public class RandomCofeChoice {
 				}
 			}
 		}
-		System.out.println(Arrays.toString(num));
+		*/
+/*		if(num[0]==num[1]) {
+			num[0] = (int) (Math.random() * 4);
+		}
+		if(num[1]==num[2]) {
+			num[1] = (int) (Math.random() * 4);
+		}
+		if(num[2]==num[3]) {
+			num[2] = (int) (Math.random() * 4);
+		}
+		if(num[0]==num[3]) {
+			num[3] = (int) (Math.random() * 4);
+		}
+		
 
+	*/
+		
+	/*	do {
+			if (num[0] == num[1]) {
+				num[0] = (int) (Math.random() * 4);
+			} else if (num[1] == num[2]) {
+				num[1] = (int) (Math.random() * 4);
+			} else if (num[2] == num[3]) {
+				num[2] = (int) (Math.random() * 4);
+			} else if (num[0] == num[3]) {
+				num[3] = (int) (Math.random() * 4);
+			}
+
+		} while (num[0] == num[1] && num[1] == num[2]
+				&& num[2] == num[3] && num[3] == num[0]);
+		*/
 	
+/*		while(num[0] == num[1] && num[1] == num[2]
+				&& num[2] == num[3] && num[3] == num[0]) {
+			if (num[0] == num[1]) {
+				num[0] = (int) (Math.random() * 4);
+			} else if (num[1] == num[2]) {
+				num[1] = (int) (Math.random() * 4);
+			} else if (num[2] == num[3]) {
+				num[2] = (int) (Math.random() * 4);
+			} else if (num[0] == num[3]) {
+				num[3] = (int) (Math.random() * 4);
+			}
+			
+		}
+		*/
+	/*	do {
+			if (num[0] == num[1]) {
+				num[0] = (int) (Math.random() * 4);
+			} else if (num[1] == num[2]) {
+				num[1] = (int) (Math.random() * 4);
+			} else if (num[2] == num[3]) {
+				num[2] = (int) (Math.random() * 4);
+			} else if (num[0] == num[3]) {
+				num[3] = (int) (Math.random() * 4);
+			}
+
+		} while (num[0] == num[1] && num[1] == num[2]
+				&& num[2] == num[3] && num[3] == num[0]);*/
+		
+		System.out.println(Arrays.toString(num));
 		
 		//결과
 		int[] res = new int[4];
