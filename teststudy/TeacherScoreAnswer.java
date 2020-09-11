@@ -67,6 +67,11 @@ public class TeacherScoreAnswer {
 			}
 		}
 
+		//정렬을 하기 위해 하는 부분
+		/*
+		 * 일단 기준점을 마련하기 위해 각 학생 점수 합계를 기준으로 잡아서 최소치를 잡아넣는다. 그래서 최소치 min를 잡아넣고
+		 * 그걸 기준으로 비교해서 정렬시키는데 각각 배열들이 따로따로 되어있기 때문에 각각 비교해서 정렬시켜 놓는다.
+		*/
 		for (int i = 0; i < nameSum.length - 1; i++) {
 			int min = i;
 			for (int j = i + 1; j < nameSum.length; j++) {
