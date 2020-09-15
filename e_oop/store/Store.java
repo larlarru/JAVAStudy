@@ -18,17 +18,27 @@ public class Store {
 		return new String[] {"연필 : 1", "팬 : 2", "종이 : 3"};
 	}
 	
-	
 	void serve(String[] sums) {
-		String[] list = order();
-		System.out.println(Arrays.toString(list));
+		String[] serve = order();
+	/*	//int resListvalue = list();
+		int listPay = Integer.parseInt(Arrays.toString(serve));
+		int listSum = 0;
+		int temp = 0;
+		if(listPay / 100 == 1 || listPay / 100 == 2 || listPay / 100 == 3) {
+			listSum++;
+		} else if(listPay / 100 == 2) {
+			listSum++;
+		} else if(listPay / 100 == 3) {
+			listSum++;
+		}
+		System.out.println(Arrays.toString(serve));*/
 		System.out.println("계산합니다");
 	}
 	
 	//계산하기 위해 필요한 것? 계산서
 	//계산 후 보스에게 줄것?
 	void pay(String[] order){
-		System.out.println("2만원입니다. 안녕히가세요.");
+		System.out.println("감사합니다. 안녕히가세요.");
 	}
 	
 	

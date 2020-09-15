@@ -18,6 +18,14 @@ public class Main {
 		
 		
 		System.out.println("고른신 품목 확인중...");
+		if(resList == 1) {
+			System.out.println(" 연필 ");
+		} else if(resList == 2) {
+			System.out.println(" 팬 ");
+		} else if(resList == 3) {
+			System.out.println(" 종이 ");
+		}
+		
 		String[] sums = {};
 		
 		alba.serve(sums); //String 타입의 배열을 이렇게 넘겨준다.
