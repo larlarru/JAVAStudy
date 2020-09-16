@@ -19,22 +19,32 @@ public class Store {
 	}
 	
 	void serve(String[] sums) {
+		System.out.println("고른신 품목 확인중...");
 		String[] serve = order();
-	/*	//int resListvalue = list();
-		int listPay = Integer.parseInt(Arrays.toString(serve));
+		System.out.println(Arrays.toString(serve));
+		System.out.println("계산합니다");
+		//int resListvalue = list();
+/*		String listPay = resList();
 		int listSum = 0;
 		int temp = 0;
-		if(listPay / 100 == 1 || listPay / 100 == 2 || listPay / 100 == 3) {
+		//.equal써야됨
+		if(listPay == '1' || listPay == '2' || listPay == '3') {
 			listSum++;
-		} else if(listPay / 100 == 2) {
+		} else if(listPay / 100 == '2') {
 			listSum++;
 		} else if(listPay / 100 == 3) {
 			listSum++;
 		}
-		System.out.println(Arrays.toString(serve));*/
+		*/
 		System.out.println("계산합니다");
+		
 	}
 	
+	private String resList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	//계산하기 위해 필요한 것? 계산서
 	//계산 후 보스에게 줄것?
 	void pay(String[] order){
