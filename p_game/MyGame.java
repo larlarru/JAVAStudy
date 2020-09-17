@@ -11,6 +11,7 @@ public class MyGame {
 	RandomGame rdg; //게임
 	
 	MyGame() {
+		m = new Move();
 		c = new Character("가렌", 100, 50, 20, 10);
 		
 		items = new Item[10];

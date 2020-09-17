@@ -1,6 +1,6 @@
 package p1_game;
 
-public class Character {
+public class CharacterUser {
 	/*
 	 * 캐릭터
 	*/
@@ -16,7 +16,7 @@ public class Character {
 	int level; //레벨업
 	//Item[] items; //보유 아이템
 	
-	Character(String name, int hp, int mp, int att, int def) {
+	CharacterUser(String name, int hp, int mp, int att, int def) {
 		this.name = name;
 		this.maxHp = hp;
 		this.maxMp = mp;
@@ -24,8 +24,8 @@ public class Character {
 		this.mp = this.maxMp;
 		this.att = att;
 		this.def = def;
-		this.level = 1;
-		this.exp = 0;
+//		this.level = 1;
+//		this.exp = 0;
 		//this.items = new Item[10];
 	}
 	
@@ -48,12 +48,20 @@ public class Character {
 		System.out.println("===============================================");
 	}*/
 	
-	void attack(Character1 c1) {
-		int damage = att - c1.def;
+	void attack(CharacterAI1 c) {
+		int damage = att - c.def;
 		damage = damage <= 0 ? 1 : damage; //마이너스가 될 경우 1
-		c1.hp = c1.hp < damage ? c1.hp - c1.hp : c1.hp - damage; //체력만큼만 감소
-		System.out.println(name + "가 공격으로 " + c1.name
+		c.hp = c.hp < damage ? c.hp - c.hp : c.hp - damage; //체력만큼만 감소
+		System.out.println(name + "가 공격으로 " + c.name
 				+ "에게" + damage + "만큼 데미지를 주었습니다.");
+		System.out.println(c.name + "의 남은 Hp : " + c.hp);
+	}
+	void defense(CharacterAI1 c1) {
+		int damage = 0;
+		damage = damage <= 0 ? 0 : damage; //마이너스가 될 경우 1
+		c1.hp = c1.hp < damage ? c1.hp - c1.hp : c1.hp - damage; //체력만큼만 감소
+		System.out.println(c1.name + "가 공격 하였으나 " + name
+				+ "는" + damage + "만큼 데미지를 받으며 방어에 성공하였습니다.");
 		System.out.println(c1.name + "의 남은 Hp : " + c1.hp);
 	}
 	

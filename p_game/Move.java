@@ -6,6 +6,9 @@ public class Move {
 	Plain pl;
 	Cienaga ci;
 	
+	Move() {
+		//
+	}
 
 	
 	void move(){

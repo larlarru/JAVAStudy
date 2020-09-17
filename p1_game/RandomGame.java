@@ -84,7 +84,7 @@ public class RandomGame {
 			default:
 				if (ranNum == ansInput) {
 					System.out.println("랜덤 숫자 값 정답 :  " + ranNum);
-					System.out.println("종료되었습니다.");
+					System.out.println("랜덤 숫자 게임 종료되었습니다.");
 					//randomgame.end();
 					// mg.start();
 					break rdgGame;
