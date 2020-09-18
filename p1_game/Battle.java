@@ -50,9 +50,9 @@ public class Battle {
 		Character1 c1 = new Character1("대전캐릭", 100 + this.point1, this.mp + this.point1, 
 												10 + this.point1, this.def + this.point1);*/
 		CharacterUser c = new CharacterUser("유저", 100, 10 + this.mp + this.point, 
-												   4 + this.att + this.point, this.def + this.point);
+												   5 + this.att + this.point, this.def);
 		CharacterAI1 c1 = new CharacterAI1("대전캐릭", 100, 10 + this.mp + this.point1, 
-													4 + this.att + this.point1, this.def + this.point1);
+													7 + this.att + this.point1, this.def);
 		System.out.println(c1.name + "를 만났습니다. 전투를 시작합니다.");
 		
 		//int input = 0;
@@ -64,23 +64,19 @@ public class Battle {
 			case 1:
 				c.attack(c1); //캐릭터가 몬스터 공격
 				if(c1.hp <= 0) {
-					System.out.println(c1.name + "이 죽었습니다.");
-					//c.getExp(150);
-					//c.getItem(m.itemDrop()); //몬스터 아이템 드랍
+					System.out.println(c1.name + "가 죽었습니다.");
 					break battle;
 				}
 				c1.attack(c); //몬스터가 캐릭터 공격
 				if(c.hp <= 0) {
-					System.out.println(c.name + "이 죽었습니다.");
-					//c.getExp(150);
-					//c.getItem(m.itemDrop()); //몬스터 아이템 드랍
+					System.out.println(c.name + "가 죽었습니다.");
 					break battle;
 				}
 				System.out.println(c.name + "의 남은 Hp : " + c.hp  + " 남은 Mp : " + c.mp);
 				System.out.println(c1.name + "의 남은 Hp : " + c1.hp  + " 남은 Mp : " + c1.mp);
 				break;
 				
-			case 2:
+			case 2: //방어
 				
 				int attackRan = (int)(Math.random() * 10); //랜덤 확률를 위해 숫자부여
 				//System.out.println(attackRan);
@@ -95,35 +91,31 @@ public class Battle {
 				System.out.println(c.name + "의 남은 Hp : " + c.hp  + " 남은 Mp : " + c.mp);
 				System.out.println(c1.name + "의 남은 Hp : " + c1.hp  + " 남은 Mp : " + c1.mp);
 				break;
-			case 3:
+			case 3: //스킬
 				System.out.println("1. 참격 2. 대참격 ");
 				this.input = ScanUtil.nextInt();
 				if (this.input == 1) {
 					if(c.mp > 10) {
 					c.skill1(c1); // 캐릭터가 몬스터 공격
 					c.mp -= 10 ;
+					c1.attack(c); //몬스터가 캐릭터 공격
 					} else if (c.mp < 10) {
 						System.out.println("마나가 없습니다.");
 						System.out.println("스킬 사용 실패하였습니다.");
-						break;
 					}
-				} else if (this.input == 2) {
+				}
+				if (this.input == 2) {
+					if(c.mp > 25) {
 					c.skill2(c1); // 캐릭터가 몬스터 공격
 					c.mp -= 25 ;
+					c1.attack(c); //몬스터가 캐릭터 공격
+					} else if(c1.mp < 25) {
+						System.out.println("마나가 없습니다.");
+						System.out.println("스킬 사용 실패하였습니다.");
+					}
 				}
-				if(c1.mp <= 0) {
-					System.out.println(c1.name + "이 죽었습니다.");
-					//c.getExp(150);
-					//c.getItem(m.itemDrop()); //몬스터 아이템 드랍
-					break battle;
-				}
-				c1.attack(c); //몬스터가 캐릭터 공격
-				if(c.mp <= 0) {
-					System.out.println(c.name + "이 죽었습니다.");
-					//c.getExp(150);
-					//c.getItem(m.itemDrop()); //몬스터 아이템 드랍
-					break battle;
-				}
+//				c1.attack(c); //몬스터가 캐릭터 공격
+			
 				System.out.println(c.name + "의 남은 Hp : " + c.hp + " 남은 Mp : " + c.mp);
 				System.out.println(c1.name + "의 남은 Hp : " + c1.hp + " 남은 Mp : " + c1.mp);
 				break;

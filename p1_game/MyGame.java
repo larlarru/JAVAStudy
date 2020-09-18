@@ -6,10 +6,12 @@ public class MyGame {
 
 	RandomGame rdg;
 	Battle battle;
+	Menu menu;
 
 	MyGame() {
 		rdg = new RandomGame();
 		battle = new Battle();
+		menu = new Menu();
 	}
 
 	public static void main(String[] args) {
@@ -23,17 +25,16 @@ public class MyGame {
 	void start() {
 		int input = 0;
 		while (true) {
-			System.out.println("1.랜덤숫자게임\t2.배틀게임\t3.종료");
+			System.out.println("환영합니다.");
+			System.out.println("1메뉴이동\t2.종료");
 			input = ScanUtil.nextInt();
 
 			switch (input) {
 			case 1:
-				rdg.rdgStart();
+				//battle.battlePart();
+				menu.start();
 				break;
 			case 2:
-				battle.battlePart();
-				break;
-			case 3:
 				System.out.println("종료");
 				System.exit(0);
 				break;
