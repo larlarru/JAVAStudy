@@ -17,6 +17,7 @@ public class RandomGame {
 	
 	
 	RandomGame(){
+		//c = new Character("가렌", 100, 50, 20, 10);
 		game = false;
 	}
 	void game(){
@@ -34,10 +35,10 @@ public class RandomGame {
 	void end(){ //시스템 종료
 		System.exit(0);
 	}
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		new RandomGame().rdgStart();
-	}
+	}*/
 	
 		
 	void rdgStart() {
@@ -77,10 +78,10 @@ public class RandomGame {
 				if (ran.ranNum == ansInput) {
 					System.out.println("랜덤 숫자 값 정답 :  " + ran.ranNum);
 					System.out.println("종료되었습니다.");
-					c.getExp(100);
+					//c.getExp(100);
 					//randomgame.end();
 					// mg.start();
-					break;
+					break rdgGame;
 				}
 				break;
 			}

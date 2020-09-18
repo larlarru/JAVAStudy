@@ -12,6 +12,7 @@ public class MyGame {
 	
 	MyGame() {
 		m = new Move();
+		rdg = new RandomGame();
 		c = new Character("가렌", 100, 50, 20, 10);
 		
 		items = new Item[10];
@@ -47,9 +48,10 @@ public class MyGame {
 				hunt();
 				break;
 			case 4:
-				String[] args = null;
-				RandomGame.main(args);
-				//rdg.rdgStart();
+				//String[] args = null;
+				//RandomGame.main(args);
+				rdg.rdgStart();
+				c.getExp(100);
 				break;
 			case 5:
 				System.out.println("종료");
