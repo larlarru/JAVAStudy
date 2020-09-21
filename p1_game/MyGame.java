@@ -16,9 +16,7 @@ public class MyGame {
 	}
 
 	public static void main(String[] args) {
-		/*
-		 * rpg 게임
-		 */
+	
 		new MyGame().start();
 
 	}

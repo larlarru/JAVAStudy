@@ -116,7 +116,6 @@ public class Battle {
 					}
 				}
 //				c1.attack(c); //몬스터가 캐릭터 공격
-			
 				System.out.println(c.name + "의 남은 Hp : " + c.hp + " 남은 Mp : " + c.mp);
 				System.out.println(c1.name + "의 남은 Hp : " + c1.hp + " 남은 Mp : " + c1.mp);
 				break;
