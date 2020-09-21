@@ -31,6 +31,8 @@ public class RandomGame {
 		if(game){
 			if(GAME_NUM == playNum){
 				this.game = false;
+				
+				
 			}
 			//System.out.println("잘꺼지는지 확인");
 		}
@@ -41,7 +43,7 @@ public class RandomGame {
 	
 	void ranNum(int ranNumber) {
 		ranNum = ranNumber;
-		System.out.println("랜덤 숫자 :  " + ranNum);
+		//System.out.println("랜덤 숫자 :  " + ranNum);
 	}
 	
 /*	public static void main(String[] args) {
@@ -54,31 +56,33 @@ public class RandomGame {
 		RandomGame randomgame = new RandomGame();
 		int randomVal = GAME_NUM;
 		
-		System.out.print("랜덤 숫자 게임 시작(시작은 1)> ");
+		System.out.print("랜덤 숫자 게임 시작(시작은 1 끝낼거면 아무 숫자 누르기)> ");
 		int startInput = ScanUtil.nextInt();
 		
 		rdgGame : while (true) {
 			if (startInput != 1) {
-				//randomgame.end();
-				// mg.start();
 				break rdgGame;
 			}
-			System.out.print("숫자 입력> ");
+			System.out.print("숫자 입력(나갈거면 1 입력)> ");
 			ansInput = ScanUtil.nextInt();
 			
 			
 			ranNum(randomVal);
 			
 			switch (ansInput) {
+			
 			case 1:
-				randomgame.game();
-				break;
+				//randomgame.game();
+				System.out.println("랜덤 숫자 값 정답 :  " + ranNum);
+				System.out.println("랜덤 게임 빠져나왔습니다.");
+				break rdgGame;
 				
 			case 2:
 				// System.out.print("숫자 입력1>");
 				// int reAnsInput = ScanUtil.nextInt();
 				// randomgame.play(reAnsInput);
 				randomgame.play(ansInput);
+				
 				
 				break;
 				
