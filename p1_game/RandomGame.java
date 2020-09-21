@@ -43,7 +43,7 @@ public class RandomGame {
 	
 	void ranNum(int ranNumber) {
 		ranNum = ranNumber;
-		//System.out.println("랜덤 숫자 :  " + ranNum);
+//		System.out.println("랜덤 숫자 :  " + ranNum);
 	}
 	
 /*	public static void main(String[] args) {
@@ -77,14 +77,14 @@ public class RandomGame {
 				System.out.println("랜덤 게임 빠져나왔습니다.");
 				break rdgGame;
 				
-			case 2:
+//			case 2:
 				// System.out.print("숫자 입력1>");
 				// int reAnsInput = ScanUtil.nextInt();
 				// randomgame.play(reAnsInput);
-				randomgame.play(ansInput);
+			//	randomgame.play(ansInput);
 				
 				
-				break;
+//				break;
 				
 			default:
 				if (ranNum == ansInput) {
