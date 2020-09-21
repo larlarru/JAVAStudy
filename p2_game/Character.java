@@ -16,7 +16,7 @@ public class Character {
 	int level; //레벨업
 	Item[] items; //보유 아이템
 	
-	Character(String name, int hp, int mp, int att, int def) {
+	Character(/*String name, int hp, int mp, int att, int def*/) {
 		this.name = name;
 		this.maxHp = hp;
 		this.maxMp = mp;

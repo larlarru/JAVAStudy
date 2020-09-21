@@ -32,7 +32,8 @@ public class MyGame {
 		m = new Move();
 		rdg = new RandomGame();
 		cns = new CharacterNameSave();
-		c = new Character(cns.cnsCName, cns.cnsCHp, cns.cnsCMp, cns.cnsCAtt, cns.cnsCDef);
+		//c = new Character(cns.cnsCName, cns.cnsCHp, cns.cnsCMp, cns.cnsCAtt, cns.cnsCDef);
+		c = new Character();
 //		c = new Character("가렌", 100, 50, 20, 10);
 //		c = new Character(this.cName, this.cHp, this.cMp, this.cAtt, this.cDef);
 		
