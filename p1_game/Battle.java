@@ -3,7 +3,8 @@ package p1_game;
 //import p_game.Item;
 import p1_game.CharacterUser;
 import p1_game.CharacterAI1;
-import e_oop.ScanUtil;
+//import e_oop.ScanUtil;
+import p1_game.ScanUtil;
 
 public class Battle {
 	

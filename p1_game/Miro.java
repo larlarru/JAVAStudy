@@ -2,7 +2,8 @@ package p1_game;
 
 import java.util.Arrays;
 
-import e_oop.ScanUtil;
+//import e_oop.ScanUtil;
+import p1_game.ScanUtil;
 
 public class Miro {
 	

@@ -1,6 +1,7 @@
 package p1_game;
 
-import e_oop.ScanUtil;
+//import e_oop.ScanUtil;
+import p1_game.ScanUtil;
 
 public class Menu {
 

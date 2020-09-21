@@ -3,7 +3,8 @@ package p1_game;
 import java.util.Scanner;
 
 import p_game.Item;
-import e_oop.ScanUtil;
+//import e_oop.ScanUtil;
+import p1_game.ScanUtil;
 
 public class RandomGame {
 	
