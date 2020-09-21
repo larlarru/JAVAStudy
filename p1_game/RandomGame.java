@@ -31,8 +31,6 @@ public class RandomGame {
 		if(game){
 			if(GAME_NUM == playNum){
 				this.game = false;
-				
-				
 			}
 			//System.out.println("잘꺼지는지 확인");
 		}
@@ -46,11 +44,6 @@ public class RandomGame {
 //		System.out.println("랜덤 숫자 :  " + ranNum);
 	}
 	
-/*	public static void main(String[] args) {
-		
-		new RandomGame().rdgStart();
-	}
-		*/
 	void rdgStart() {
 		
 		RandomGame randomgame = new RandomGame();
@@ -63,7 +56,7 @@ public class RandomGame {
 			if (startInput != 1) {
 				break rdgGame;
 			}
-			System.out.print("숫자 입력(나갈거면 1 입력)> ");
+			System.out.print("2~100 까지 숫자 입력(나갈거면 1 입력)> ");
 			ansInput = ScanUtil.nextInt();
 			
 			
@@ -82,16 +75,14 @@ public class RandomGame {
 				// int reAnsInput = ScanUtil.nextInt();
 				// randomgame.play(reAnsInput);
 			//	randomgame.play(ansInput);
-				
-				
 //				break;
 				
 			default:
-				if (ranNum == ansInput) {
+				if (ansInput > 100) {
+					System.out.println("정해진 숫자 범위를 넘어섰습니다. 다시 입력하세요.");
+				} else if (ranNum == ansInput) {
 					System.out.println("랜덤 숫자 값 정답 :  " + ranNum);
 					System.out.println("랜덤 숫자 게임 종료되었습니다.");
-					// randomgame.end();
-					// mg.start();
 					break rdgGame;
 				}
 				break;

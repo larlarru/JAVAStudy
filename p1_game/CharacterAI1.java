@@ -9,9 +9,8 @@ public class CharacterAI1 {
 	int att; //공격력
 	int def; //방어력
 	int level; //레벨업
-	//Item[] items; //보유 아이템
 	
-	CharacterAI1(String name, int hp, int mp, int att, int def/*, Item[] items*/) {
+	CharacterAI1(String name, int hp, int mp, int att, int def) {
 		this.name = name;
 		this.maxHp = hp;
 		this.maxMp = mp;
@@ -19,7 +18,6 @@ public class CharacterAI1 {
 		this.mp = this.maxMp;
 		this.att = att;
 		this.def = def;
-		//this.items = items;
 	}
 	
 	void attack(CharacterUser c1) { //파라미터만 바꿔서 공격 대상을 바꿔주면된다.
@@ -63,9 +61,4 @@ public class CharacterAI1 {
 
 	}
 	
-	
-/*	Item itemDrop() {
-		return items[(int)(Math.random() * items.length)];
-	}
-	*/
 }

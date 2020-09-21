@@ -66,7 +66,6 @@ public class Miro {
 				temp = this.tempArr[0];
 				if (this.ansNum == this.tempArr[0]) {
 					System.out.println("미로를 빠져나왔습니다.");
-//					System.out.println("랜덤 숫자 생성값들" + Arrays.toString(this.ranArr));
 					System.out.println("랜덤 숫자 생성값들 배정순서" + Arrays.toString(this.tempArr));
 					System.out.println("입력해야하는 정답숫자 : " + this.ansNum);
 						break miro;
@@ -78,7 +77,6 @@ public class Miro {
 				temp = this.tempArr[1];
 				if (this.ansNum == this.tempArr[1]) {
 					System.out.println("미로를 빠져나왔습니다.");
-//					System.out.println("랜덤 숫자 생성값들" + Arrays.toString(this.ranArr));
 					System.out.println("랜덤 숫자 생성값들 배정순서" + Arrays.toString(this.tempArr));
 					System.out.println("입력해야하는 정답숫자 : " + this.ansNum);
 						break miro;
@@ -90,7 +88,6 @@ public class Miro {
 				temp = this.tempArr[2];
 				if (this.ansNum == this.tempArr[2]) {
 					System.out.println("미로를 빠져나왔습니다.");
-//					System.out.println("랜덤 숫자 생성값들" + Arrays.toString(this.ranArr));
 					System.out.println("랜덤 숫자 생성값들 배정순서" + Arrays.toString(this.tempArr));
 					System.out.println("입력해야하는 정답숫자 : " + this.ansNum);
 						break miro;
@@ -102,7 +99,6 @@ public class Miro {
 				temp = this.tempArr[3];
 				if (this.ansNum == this.tempArr[3]) {
 					System.out.println("미로를 빠져나왔습니다.");
-//					System.out.println("랜덤 숫자 생성값들" + Arrays.toString(this.ranArr));
 					System.out.println("랜덤 숫자 생성값들 배정순서" + Arrays.toString(this.tempArr));
 					System.out.println("입력해야하는 정답숫자 : " + this.ansNum);
 						break miro;
@@ -114,7 +110,6 @@ public class Miro {
 				temp = this.tempArr[4];
 				if (this.ansNum == this.tempArr[4]) {
 					System.out.println("미로를 빠져나왔습니다.");
-//					System.out.println("랜덤 숫자 생성값들" + Arrays.toString(this.ranArr));
 					System.out.println("랜덤 숫자 생성값들 배정순서" + Arrays.toString(this.tempArr));
 					System.out.println("입력해야하는 정답숫자 : " + this.ansNum);
 						break miro;

@@ -32,10 +32,10 @@ public class Menu {
 				battle.battlePart(); //배틀
 				break;
 			case 3:
-				miro.start();
+				miro.start(); //미로
 				break;
 			case 4:
-				numgame.start();
+				numgame.start(); //큰숫자대결
 				break;
 			case 5:
 				break menu;
