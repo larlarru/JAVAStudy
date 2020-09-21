@@ -103,7 +103,7 @@ public class Miro {
 			case 1:
 				temp = this.tempArr[0];
 				if (this.ansNum == this.ranArr[temp]) {
-					System.out.println("맞췄습니다.");
+					System.out.println("미로를 빠져나왔습니다.");
 						break miro;
 					} else if (this.ansNum != this.ranArr[temp]) {
 					System.out.println("실패했습니다.");
@@ -112,7 +112,7 @@ public class Miro {
 			case 2:
 				temp = this.tempArr[1];
 				if (this.ansNum == this.ranArr[temp]) {
-					System.out.println("맞췄습니다.");
+					System.out.println("미로를 빠져나왔습니다.");
 						break miro;
 					} else if (this.ansNum != this.ranArr[temp]) {
 					System.out.println("실패했습니다.");
@@ -121,7 +121,7 @@ public class Miro {
 			case 3:
 				temp = this.tempArr[2];
 				if (this.ansNum == this.ranArr[temp]) {
-					System.out.println("맞췄습니다.");
+					System.out.println("미로를 빠져나왔습니다.");
 						break miro;
 					} else if (this.ansNum != this.ranArr[temp]) {
 					System.out.println("실패했습니다.");
@@ -130,7 +130,7 @@ public class Miro {
 			case 4:
 				temp = this.tempArr[3];
 				if (this.ansNum == this.ranArr[temp]) {
-					System.out.println("맞췄습니다.");
+					System.out.println("미로를 빠져나왔습니다.");
 						break miro;
 					} else if (this.ansNum != this.ranArr[temp]) {
 					System.out.println("실패했습니다.");
@@ -139,7 +139,7 @@ public class Miro {
 			case 5:
 				temp = this.tempArr[4];
 				if (this.ansNum == this.ranArr[temp]) {
-					System.out.println("맞췄습니다.");
+					System.out.println("미로를 빠져나왔습니다.");
 						break miro;
 					} else if (this.ansNum != this.ranArr[temp]) {
 					System.out.println("실패했습니다.");

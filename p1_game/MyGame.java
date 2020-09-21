@@ -27,7 +27,7 @@ public class MyGame {
 		int input = 0;
 		while (true) {
 			System.out.println("환영합니다.");
-			System.out.println("1메뉴이동\t2.종료");
+			System.out.println("1시작\t2.종료");
 			input = ScanUtil.nextInt();
 
 			switch (input) {
