@@ -90,17 +90,16 @@ public class RandomGame {
 				if (ranNum == ansInput) {
 					System.out.println("랜덤 숫자 값 정답 :  " + ranNum);
 					System.out.println("랜덤 숫자 게임 종료되었습니다.");
-					//randomgame.end();
+					// randomgame.end();
 					// mg.start();
 					break rdgGame;
 				}
 				break;
 			}
-			
+
 		}
 	}
-	
-	
+
 }
 
 	
