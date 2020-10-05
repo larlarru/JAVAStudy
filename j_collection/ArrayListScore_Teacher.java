@@ -1,9 +1,9 @@
-package i_collection;
+package j_collection;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayListScore {
+public class ArrayListScore_Teacher {
 
 	public static void main(String[] args) {
 		/*
