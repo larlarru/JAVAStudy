@@ -1,5 +1,6 @@
 package j_collection;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -10,6 +11,8 @@ public class Board {
 	
 	private static HashMap<String, Object> board = new HashMap<>();
 	private static ArrayList<HashMap<String, Object>> Board = new ArrayList<>();
+	private static Date today = new Date();
+	private static SimpleDateFormat today1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
 	static int input;
 	static String sInput;
@@ -41,11 +44,12 @@ public class Board {
 		 */
 		
 //		HashMap<String, Object> board = new HashMap<>();
+//		SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
 		board.put("번호", boardNum);
 		board.put("제목", "안녕하세요");
 		board.put("내용", "");
 		board.put("작성자", "홍길동");
-		board.put("작성일", new Date());
+		board.put("작성일", today1.format(today));
 		
 //		ArrayList<HashMap<String, Object>> Board = new ArrayList<>();
 		Board.add(board);
@@ -54,7 +58,7 @@ public class Board {
 		
 		
 //		System.out.println(board);
-		boardStart : while(true) {
+		boardStart : while(true) {			
 			System.out.println("1.조회\t2.등록\t3.수정\t4.삭제\t5.종료");
 			System.out.print("입력>");
 			input = ScanUtil.nextInt();
@@ -69,6 +73,18 @@ public class Board {
 					for (String dKey : bKeySet) {
 						System.out.println(dKey + " : " + b.get(dKey));
 					}
+					/*if(i==i) {
+					Object num = board.get("번호"); //Object 타입의 변수를 만들어서 b의 key값? 가져옴
+					System.out.println("번호 : " + num);
+					Object name = board.get("제목");
+					System.out.println("제목 : " + name);
+					Object text = board.get("내용");
+					System.out.println("내용 : " + text);
+					Object user = board.get("작성자");
+					System.out.println("작성자 : " + user);
+					Object date = board.get("작성일");
+					System.out.println("작성일 : " + date);
+					}*/
 					System.out.println("----------------------------------------------------");
 				}
 				break;
@@ -123,7 +139,7 @@ public class Board {
 			System.out.print("등록할 게시판 작성자 입력>");
 			sInput = ScanUtil.nextLine();
 			board.put("작성자", sInput);
-			board.put("작성일", new Date());
+			board.put("작성일", today);
 			Board.add(board);
 
 //			if (sInput.equals("exit")) {
@@ -159,12 +175,21 @@ public class Board {
 	}
 	
 	static void remove() { //제거부분은 구현했으나 그당시등록된?부분만 제거 가능
-		System.out.println(board);
+//		System.out.println(board);
+		System.out.println("----------------------------------------------------");
+		for (int i = 0; i < Board.size(); i++) {
+			HashMap<String, Object> b = Board.get(i);
+			Set<String> bKeySet = b.keySet();
+			for (String dKey : bKeySet) {
+				System.out.println(dKey + " : " + b.get(dKey));
+			}
+			System.out.println("----------------------------------------------------");
+		}
 //		System.out.println(board.size());
-		System.out.print("지울 부분 입력>");
+		System.out.print("지울 게시판 입력(0번부터 시작임)>");
 		input = ScanUtil.nextInt();
-		board.remove(sInput); //제거
-//		Board.remove(input);
+//		board.remove(sInput); //제거
+		Board.remove(input); //ArrayList에 저장된 인덱스를 입력해서 지움
 	}
 	
 	
