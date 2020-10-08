@@ -84,7 +84,7 @@ public class JDBCBoard {
 			if (con != null) try { con.close(); } catch (Exception e) { }
 		}
 		
-		//시작하면 sql에 등록된 게시판 조회해서 보여줌
+		//맨 처음 시작하면 sql에 등록된 게시판 조회해서 보여줌
 		System.out.println("-----------------------------------------------------------------------------------------------");
 		
 		con = null;
@@ -108,8 +108,6 @@ public class JDBCBoard {
 				Date REG_DATE = rs.getDate(5);
 				System.out.println(BOARD_NO + "\t" + TITLE + "\t" + CONTENT + "\t\t" + USER_ID + "\t" + REG_DATE);
 			}
-			int result = ps.executeUpdate();
-			System.out.println(result + "개의 행이 조회 되었습니다.");
 			con.commit();
 			
 		} catch (SQLException e) {
@@ -162,7 +160,6 @@ public class JDBCBoard {
 		ps = null;
 		rs = null;
 
-		System.out.println("-----------------------------------------------------------------------------------------------");
 		try {
 			con = DriverManager.getConnection(url, user, password);
 //			input=0;
@@ -173,6 +170,7 @@ public class JDBCBoard {
 			
 			
 			System.out.println("번호\t" + "제목\t" + "\t내용\t\t" + "작성자\t" + "작성일\t");
+			System.out.println("-----------------------------------------------------------------------------------------------");
 			while(rs.next()) {
 				//db에 저장된 데이터 형태에따라 String int date뭐 이런식으로 달라진다. date받아올고면 DATE 변수 이렇게 해주면된다.
 				int BOARD_NO = rs.getInt(1);
@@ -182,6 +180,7 @@ public class JDBCBoard {
 				Date REG_DATE = rs.getDate(5);
 				System.out.println(BOARD_NO + "\t" + TITLE + "\t" + CONTENT + "\t\t" + USER_ID + "\t" + REG_DATE);
 			}
+			System.out.println("-----------------------------------------------------------------------------------------------");
 			int result = ps.executeUpdate();
 			System.out.println(result + "개의 행이 조회 되었습니다.");
 			con.commit();
@@ -195,7 +194,6 @@ public class JDBCBoard {
 			if (con != null) try { con.close(); } catch (Exception e) { }
 		}
 
-		System.out.println("-----------------------------------------------------------------------------------------------");
 	}
 
 	static void boardCreate() {
@@ -280,6 +278,7 @@ public class JDBCBoard {
 					String USER_ID = rs.getString(4);
 					Date REG_DATE = rs.getDate(5);
 					System.out.println(BOARD_NO + "\t" + TITLE + "\t" + CONTENT + "\t\t" + USER_ID + "\t" + REG_DATE);
+					System.out.println("-----------------------------------------------------------------------------------------------");
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -289,43 +288,56 @@ public class JDBCBoard {
 				if (ps != null) try { ps.close(); } catch (Exception e) { }
 				if (con != null) try { con.close(); } catch (Exception e) { }
 			}
-
-			System.out.println("-----------------------------------------------------------------------------------------------");
 			
-			//게시판 수정 부분
-			con = null;
-			ps = null;
-			rs = null;
-			try {
-				con = DriverManager.getConnection(url, user, password);
-				
-				//UPDATE TB_JDBC_BOARD SET content = 'a'  WHERE board_no = 1;
-				//col, colVal, board_no_NUM
-				String sql = "UPDATE TB_JDBC_BOARD SET title = ?, content = ? WHERE board_no = ?";
-				ps = con.prepareStatement(sql);
-				System.out.print("수정할 게시판 제목 입력>");
-				sInput = ScanUtil.nextLine();
-				ps.setString(1, sInput);
-				System.out.print("수정할 게시판 내용 입력>");
-				sInput = ScanUtil.nextLine();
-				ps.setString(2, sInput);
-				System.out.print("수정할 게시판 번호 입력>");
-				input = ScanUtil.nextInt();
-				ps.setInt(3, input);
-				
-				int result = ps.executeUpdate();
-				System.out.println(result + "개의 행이 수정되었습니다.");
-				con.commit();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				// 여기 finally에서 실행
-				if (rs != null) try { rs.close(); } catch (Exception e) { }
-				if (ps != null) try { ps.close(); } catch (Exception e) { }
-				if (con != null) try { con.close(); } catch (Exception e) { }
+			System.out.println("0.목록이동\t1.수정");
+			System.out.print("번호 입력>");
+			input = ScanUtil.nextInt();
+			switch(input) {
+			
+			case 0:
+				break update;
+			case 1:
+				//게시판 수정 부분
+				con = null;
+				ps = null;
+				rs = null;
+				try {
+					con = DriverManager.getConnection(url, user, password);
+					
+					//UPDATE TB_JDBC_BOARD SET content = 'a'  WHERE board_no = 1;
+					//col, colVal, board_no_NUM
+					String sql = "UPDATE TB_JDBC_BOARD SET title = ?, content = ? WHERE board_no = ?";
+					ps = con.prepareStatement(sql);
+					System.out.print("수정할 게시판 제목 입력>");
+					sInput = ScanUtil.nextLine();
+					ps.setString(1, sInput);
+					System.out.print("수정할 게시판 내용 입력>");
+					sInput = ScanUtil.nextLine();
+					ps.setString(2, sInput);
+					System.out.print("수정할 게시판 번호 입력>");
+					input = ScanUtil.nextInt();
+					ps.setInt(3, input);
+					
+					int result = ps.executeUpdate();
+					System.out.println(result + "개의 행이 수정되었습니다.");
+					con.commit();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} finally {
+					// 여기 finally에서 실행
+					if (rs != null) try { rs.close(); } catch (Exception e) { }
+					if (ps != null) try { ps.close(); } catch (Exception e) { }
+					if (con != null) try { con.close(); } catch (Exception e) { }
+				}
+				break;
+			default :
+				if(input == 0 || input == 1)
+				break;
+					
 			}
+
 			
-			break update;
+			
 		}
 	}
 	
@@ -363,7 +375,10 @@ public class JDBCBoard {
 					String USER_ID = rs.getString(4);
 					Date REG_DATE = rs.getDate(5);
 					System.out.println(BOARD_NO + "\t" + TITLE + "\t" + CONTENT + "\t\t" + USER_ID + "\t" + REG_DATE);
+					System.out.println("-----------------------------------------------------------------------------------------------");
 				}
+				int result = ps.executeUpdate();
+				System.out.println(result + "개의 행이 조회 되었습니다.");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -373,7 +388,6 @@ public class JDBCBoard {
 				if (con != null) try { con.close(); } catch (Exception e) { }
 			}
 			
-			System.out.println("-----------------------------------------------------------------------------------------------");
 
 		//삭제부분
 		System.out.print("삭제할 게시판 번호 입력>");
