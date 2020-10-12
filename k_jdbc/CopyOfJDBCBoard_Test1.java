@@ -45,6 +45,7 @@ public class CopyOfJDBCBoard_Test1 {
 			//임의의 테이블에 insert 할 수 있는 코드를 작성해주세요.
 //			SELECT NVL(MAX(BOARD_NO),0) + 1 FROM TB_JDBC_BOARD;
 			String sql = "insert into dept_test values(?, ?, ?, ?, ?)";
+	
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, 1);
 			ps.setString(2, "안녕하세요");
